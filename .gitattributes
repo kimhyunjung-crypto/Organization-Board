@@ -1,0 +1,20 @@
+* text=auto
+*.md text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.ttf binary
+*.tflite binary
+*.wasm binary
+*.png binary
+*.jpg binary
+*.pdf binary
+*.xlsx binary
+# Preserve upstream bytes: these files have pinned SHA-256 digests.
+public/assets/** -text

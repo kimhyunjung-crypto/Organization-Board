@@ -1,0 +1,71 @@
+{
+  "name": "org-board-assets",
+  "description": "Static offline assets for org-board MVP",
+  "generatedAt": "2026-09-15T05:34:55.317Z",
+  "assets": [
+    {
+      "path": "/assets/fonts/NanumGothic-ExtraBold.ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/133ccbee9a8b408eb71f31a36ccb9116f5c695ad/ofl/nanumgothic/NanumGothic-ExtraBold.ttf",
+      "version": "1.000 (google/fonts commit 133ccbee9a8b408eb71f31a36ccb9116f5c695ad)",
+      "sha256": "5c4568e5295a8c52bc30e7efa1ea6d2de43556268ef42daba93540a1ece691ae",
+      "license": "OFL-1.1"
+    },
+    {
+      "path": "/assets/fonts/OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/133ccbee9a8b408eb71f31a36ccb9116f5c695ad/ofl/nanumgothic/OFL.txt",
+      "version": "1.1 (google/fonts commit 133ccbee9a8b408eb71f31a36ccb9116f5c695ad)",
+      "sha256": "eeacf16032901d0ed0456876ec77b8f0fda6b3fecec7d972f8543eb602e6c30f",
+      "license": "OFL-1.1"
+    },
+    {
+      "path": "/assets/models/blaze_face_short_range.tflite",
+      "source": "https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/1/blaze_face_short_range.tflite",
+      "version": "v1 (float16)",
+      "sha256": "b4578f35940bf5a1a655214a1cce5cab13eba73c1297cd78e1a04c2380b0152f",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "/assets/mediapipe/wasm/vision_wasm_internal.js",
+      "source": "@mediapipe/tasks-vision@1.0.1/wasm/vision_wasm_internal.js",
+      "version": "1.0.1",
+      "sha256": "e170ee67dd4e16c1a6fcd8840a206687e5a59b22c20e4a902bc445b095454d73",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "/assets/mediapipe/wasm/vision_wasm_internal.wasm",
+      "source": "@mediapipe/tasks-vision@1.0.1/wasm/vision_wasm_internal.wasm",
+      "version": "1.0.1",
+      "sha256": "8da277a733926eacd0474b8704b36742d6ec3231c57a860c5b889dff8f1df886",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "/assets/mediapipe/wasm/vision_wasm_module_internal.js",
+      "source": "@mediapipe/tasks-vision@1.0.1/wasm/vision_wasm_module_internal.js",
+      "version": "1.0.1",
+      "sha256": "da8934057f147b622e82cfb4c0dbd85461c598e268588b5a8ba9ca963a8ff82d",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "/assets/mediapipe/wasm/vision_wasm_module_internal.wasm",
+      "source": "@mediapipe/tasks-vision@1.0.1/wasm/vision_wasm_module_internal.wasm",
+      "version": "1.0.1",
+      "sha256": "2dabd8e23c60984628beb7bb338764c81a08e6837145273f59578684b5d53c1b",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "/assets/mediapipe/wasm/vision_wasm_nosimd_internal.js",
+      "source": "@mediapipe/tasks-vision@1.0.1/wasm/vision_wasm_nosimd_internal.js",
+      "version": "1.0.1",
+      "sha256": "e81d715a3d42cc3373602eb2f7aff795d164934db680e32496b65dab537f9658",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "/assets/mediapipe/wasm/vision_wasm_nosimd_internal.wasm",
+      "source": "@mediapipe/tasks-vision@1.0.1/wasm/vision_wasm_nosimd_internal.wasm",
+      "version": "1.0.1",
+      "sha256": "a28483cd42e74e855bf5ebdb6b40d9b66a5b49e35e95020bc97669e6822a3192",
+      "license": "Apache-2.0"
+    }
+  ],
+  "pendingDependencies": []
+}

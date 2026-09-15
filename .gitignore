@@ -1,0 +1,36 @@
+# Dependencies and package-manager logs
+node_modules/
+*.log
+npm-debug.log*
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Build and test outputs
+dist/
+coverage/
+playwright-report/
+test-results/
+blob-report/
+
+# Tool and editor state
+.vite/
+.eslintcache
+*.tsbuildinfo
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
