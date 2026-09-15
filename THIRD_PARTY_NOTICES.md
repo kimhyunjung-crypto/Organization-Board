@@ -270,11 +270,10 @@ THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
 - **Integration Status:**
   - Integrated and verified. Package `@mediapipe/tasks-vision` (version `1.0.1`) is installed in `node_modules`.
   - WebAssembly binaries (`vision_wasm_internal.wasm`, `vision_wasm_module_internal.wasm`, `vision_wasm_nosimd_internal.wasm`) and corresponding JavaScript loader modules (`vision_wasm_internal.js`, `vision_wasm_module_internal.js`, `vision_wasm_nosimd_internal.js`) are copied into `/assets/mediapipe/wasm/`.
-  - All files are verified with binary magic header checks (`0x00 0x61 0x73 0x6D` for WASM) and pinned SHA-256 checksums to ensure runtime integrity and offline self-containment.
+  - All files were checked against their SHA-256 digests; WASM files also passed magic-header checks (`0x00 0x61 0x73 0x6D`). Functional inference and complete offline workflow verification are separate tests recorded in `doc/verification.md`.
 
 ---
 
 ## 4. Privacy and Confidentiality Notice
 
-No real personal identifying information (PII), employee photographs, or actual organizational data is distributed within this codebase or any associated asset bundle.
-All testing and asset validation procedures utilize synthetic or publicly available open-access resources strictly adhering to local data protection and TRD §1.1 / FRD F8.1 standards.
+The test inputs created for this project are synthetic. The generated fictional portrait and its prompt are documented in `tests/fixtures/images/README.md`. The asset verifier checks file extensions and hashes; it does not establish the absence of personal data in arbitrary file contents.

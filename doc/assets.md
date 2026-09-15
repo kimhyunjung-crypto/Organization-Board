@@ -176,7 +176,7 @@ node scripts/prepare-assets.mjs
 ```
 - 고정된 공식 URL로부터 글꼴 및 모델을 다운로드합니다.
 - 기존 파일이 존재하고 SHA-256이 일치하면 다운로드를 건너뜁니다 (멱등성 보장).
-- 설치된 `@mediapipe/tasks-vision@1.0.1`로부터 WASM 바이너리 및 JS 로더를 복사하고 매직 바이트(`0x00 0x61 0x73 0x6D`)를 확인합니다.
+- 설치된 `@mediapipe/tasks-vision@1.0.1`로부터 WASM 바이너리 및 JS 로더를 복사하고 매직 바이트(`0x00 0x61 0x73 0x6D`)를 확인합니다. 설치 버전은 package-lock.json과 일치해야 하며 파일 해시는 기존 manifest의 검토된 값과 일치해야 합니다. manifest를 삭제하지 마세요. 자산 업그레이드는 출처·변경 파일을 검토한 뒤 명시적으로 해시 기준을 갱신합니다.
 - `public/assets/manifest.json`을 생성/갱신합니다.
 
 ### 5.2 자산 무결성 및 보안 검증
