@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useMemo, useState, type ComponentType } from "react";
+import ProductApp from "./product/ProductApp";
 import { inspectLocalAssets, type AssetReadiness } from "./technical/assets";
 import { syntheticFixture, validateSyntheticFixture } from "./technical/fixture";
 
@@ -16,6 +17,7 @@ const spikeModules = import.meta.glob<Record<string, ComponentType>>("./technica
 const spikeDefinitions = [
   { id: "spreadsheet", name: "S00.02 · XLSX 시험", component: "SpreadsheetHarness" },
   { id: "imaging", name: "S00.03 · 사진·크롭 시험", component: "ImagingHarness" },
+  { id: "pdf", name: "S00.04 · PDF·인쇄 시험", component: "PdfHarness" },
 ] as const;
 const spikeComponents = new Map(spikeDefinitions.map((definition) => {
   const loader = Object.entries(spikeModules).find(([path]) =>
@@ -33,21 +35,46 @@ function PendingSpike() {
 }
 const SpreadsheetSpike = spikeComponents.get("spreadsheet") ?? PendingSpike;
 const ImagingSpike = spikeComponents.get("imaging") ?? PendingSpike;
+const PdfSpike = spikeComponents.get("pdf") ?? PendingSpike;
 
 export function App(props: AppProps) {
   const requested = new URLSearchParams(window.location.search).get("spike");
+
+  if (!requested) {
+    return <ProductApp />;
+  }
+
+  const isFoundation = requested === "foundation";
   const definition = spikeDefinitions.find((spike) => spike.id === requested);
-  return <>
-    <nav className="spike-navigation" aria-label="기술 시험 이동">
-      <a href="/">S00.01 · 환경</a>
-      {spikeDefinitions.map((spike) => <a href={`/?spike=${spike.id}`} key={spike.id}>{spike.name}</a>)}
-    </nav>
-    {definition ? (
-      <Suspense fallback={<p className="harness-shell" role="status">시험 화면을 불러오는 중입니다.</p>}>
-        {definition.id === "spreadsheet" ? <SpreadsheetSpike /> : <ImagingSpike />}
-      </Suspense>
-    ) : <FoundationHarness {...props} />}
-  </>;
+
+  return (
+    <>
+      <nav className="spike-navigation" aria-label="기술 시험 이동">
+        <a href="/">← 조직보드 제품으로 이동</a>
+        <a href="/?spike=foundation">S00.01 · 환경</a>
+        {spikeDefinitions.map((spike) => (
+          <a href={`/?spike=${spike.id}`} key={spike.id}>
+            {spike.name}
+          </a>
+        ))}
+      </nav>
+      {definition ? (
+        <Suspense fallback={<p className="harness-shell" role="status">시험 화면을 불러오는 중입니다.</p>}>
+          {definition.id === "spreadsheet" ? (
+            <SpreadsheetSpike />
+          ) : definition.id === "imaging" ? (
+            <ImagingSpike />
+          ) : (
+            <PdfSpike />
+          )}
+        </Suspense>
+      ) : isFoundation ? (
+        <FoundationHarness {...props} />
+      ) : (
+        <ProductApp />
+      )}
+    </>
+  );
 }
 
 function FoundationHarness({ assetProbe = inspectLocalAssets }: AppProps) {

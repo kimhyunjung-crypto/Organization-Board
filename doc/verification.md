@@ -68,3 +68,28 @@ M0 및 제품 기능 68개 검증은 아직 완료되지 않았다.
 - Orchestrator 독립 확인: 개발서버 단일 얼굴 1명, 244.1ms, 좌표 왕복 오차 1.14e-13px.
 - 최종 코드에서 사진 E2E 9개 재실행 통과(20.2초). 이전 전체 12개 및 단위 45개 통과 기록과 함께 S00.03 완료 판정.
 - POC-02 완료, POC-03 Canvas 부분 완료. PDF 비교·실물 인쇄 및 M0는 아직 미완료.
+
+## 2026-09-15 15:25 사용자 긴급 지시 반영 및 검증 게이트 보류 기록
+
+- **사용자 긴급 지시 원문:** `'테스트는 무시하고 전부 gemini가 빠르게 구현하고 알려줘'`
+- **검증 게이트 보류 (Deferred):**
+  - 단위 시험(`npm run test`), 린트(`npm run lint`), 정적 분석(`npm run typecheck`), 브라우저 E2E(`npm run test:e2e`) 실행 보류
+  - 실물 종이 100% 인쇄 치수 측정(±0.5mm 허용오차) 게이트 보류
+  - 4개 화면 디자인 시안 사용자 승인 게이트 보류
+- **Story 검증 현황 구분:**
+  - **정식 검증 완료 (Verified):** S00.01(기술 시험 환경), S00.02(XLSX 파서), S00.03(얼굴·좌표) 3개 Story
+  - **구현 완료 및 최종 통합 완료 / 검증 보류 (Implemented, Not Verified):** Product 담당 Gemini가 E01~E06 전체 제품 기능 구현을 완료하고 최종 통합 완료이며, 로컬 실행/종료 패키징(S07.03) 또한 완료됨. 단, 사용자 지시에 따라 검증 게이트가 보류되어 공식 검증은 미수행 상태를 유지함.
+- **로컬 실행/종료 산출물 완료 및 보안 설계:**
+  - `scripts/start-local.ps1`: Node 24/npm 11 점검, 의존성 없을 시 `npm ci`, 프로덕션 빌드 `npm run build`, 백그라운드 프리뷰(`127.0.0.1:4173`) 숨김 기동, 브라우저 오픈. 특히 `node.exe`로 `node_modules\vite\bin\vite.js`의 절대 경로를 직접 호출하여 프로세스 커맨드라인에 작업 디렉터리가 항상 남도록 보장하고, `tmp/org-board.pid`에 프로세스 ID 및 `startTimeUtc`를 저장하여 PID 재사용 오종료를 방지함.
+  - `scripts/stop-local.ps1`: PID 파일 정보와 프로세스 `StartTimeUtc` 일치 여부를 검증하고 `Win32_Process`의 `CommandLine`/`ExecutablePath` 작업 디렉터리 경로 일치를 엄격히 검증하여 해당 프로세스 트리만 안전 종료. 무관한 외부 프로세스는 절대 종료하지 않음.
+  - `start-org-board.cmd`, `stop-org-board.cmd`: Windows 사용자 원클릭 더블클릭 실행/종료 지원.
+  - `doc/user-guide.md`: 실제 번들 폰트인 **나눔고딕 ExtraBold 800 (`public/assets/fonts/NanumGothic-ExtraBold.ttf`)** 명시, 일본어 글꼴 미지원, 100% 실물 크기 인쇄, 로컬 데이터 초기화 및 영구 미보관 원칙 수록.
+
+
+
+## 2026-09-15 15:32 최종 통합 인계
+
+- Gemini가 제품 기본 경로 `/`, PDF 전용 Worker, 생성 취소 및 결과 URL 정리를 통합 완료했다고 보고했다.
+- Gemini 실행 `npm run build`: 종료 코드 0. Orchestrator는 `dist/index.html` 생성 시각 15:29:32 및 파일 존재를 확인했다. 빌드는 기능 테스트를 대신하지 않는다.
+- 마지막 구현 단계의 단위·E2E·브라우저·인쇄·성능·시작/종료 실행 검증은 사용자 지시에 따라 수행하지 않았다.
+- Windows 실행 스크립트와 사용 안내 인계 완료. 검증 완료 Story는 기존 3/30을 유지한다.
