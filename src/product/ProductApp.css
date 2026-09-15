@@ -477,8 +477,8 @@
 
 .chip-디자인 { background-color: var(--chip-design); }
 .chip-서비스 { background-color: var(--chip-service); }
-.chip-개발\(CE\) { background-color: var(--chip-ce); }
-.chip-백오피스\(BP\) { background-color: var(--chip-bp); }
+.chip-개발 { background-color: var(--chip-ce); }
+.chip-백오피스 { background-color: var(--chip-bp); }
 .chip-QA { background-color: var(--chip-qa); }
 
 .chip-pill {
