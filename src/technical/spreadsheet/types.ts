@@ -9,7 +9,7 @@ export const SPREADSHEET_LIMITS = {
 export const REQUIRED_COLUMNS = ["이름", "직군", "계약형태"] as const;
 export type RequiredColumn = (typeof REQUIRED_COLUMNS)[number];
 
-export const ALLOWED_JOB_CATEGORIES = ["디자인", "서비스", "개발(CE)", "백오피스(BP)", "QA"] as const;
+export const ALLOWED_JOB_CATEGORIES = ["디자인", "서비스", "개발", "백오피스", "QA"] as const;
 export const ALLOWED_CONTRACT_TYPES = ["정규직", "계약직", "아르바이트", "파견직", "인턴"] as const;
 
 export type SpreadsheetErrorCode =

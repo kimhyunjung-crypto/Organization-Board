@@ -27,7 +27,7 @@ export async function createMixedSyntheticWorkbook(
 
   const input = workbook.addWorksheet("합성 입력");
   input.addRow(options.extraHeader ? ["이름", "직군", "계약형태", "무시할 열"] : ["이름", "직군", "계약형태"]);
-  input.addRow(["  합성   인물 001  ", "개발(CE)", "정규직", "합성 메모"]);
+  input.addRow(["  합성   인물 001  ", "개발", "정규직", "합성 메모"]);
   input.addRow([{ formula: "1+1", result: 2 }, "QA", "계약직"]);
   input.addRow(["합성 인물 003", { text: "합성 링크", hyperlink: "https://example.invalid" }, "인턴"]);
   input.addRow(["합성 인물 004", "서비스", 20260915]);
@@ -37,7 +37,7 @@ export async function createMixedSyntheticWorkbook(
     "아르바이트",
   ]);
   input.addRow([null, null, null]);
-  input.addRow(["합성 인물 001", "백오피스(BP)", "파견직"]);
+  input.addRow(["합성 인물 001", "백오피스", "파견직"]);
 
   return workbookBytes(workbook);
 }

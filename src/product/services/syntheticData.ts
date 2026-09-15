@@ -9,11 +9,11 @@ export interface SyntheticEmployeeSeed {
 
 export const SYNTHETIC_SAMPLE_SEEDS: readonly SyntheticEmployeeSeed[] = [
   { name: "김태희", jobCategory: "디자인", contractType: "정규직", photoBgColor: "#FFE8D6" },
-  { name: "이준호", jobCategory: "개발(CE)", contractType: "정규직", photoBgColor: "#D8E2DC" },
+  { name: "이준호", jobCategory: "개발", contractType: "정규직", photoBgColor: "#D8E2DC" },
   { name: "박서진", jobCategory: "서비스", contractType: "계약직", photoBgColor: "#ECE4DB" },
-  { name: "최민수", jobCategory: "백오피스(BP)", contractType: "정규직", photoBgColor: "#E8E8E4" },
+  { name: "최민수", jobCategory: "백오피스", contractType: "정규직", photoBgColor: "#E8E8E4" },
   { name: "정다은", jobCategory: "QA", contractType: "인턴", photoBgColor: "#FCD5CE" },
-  { name: "강현우", jobCategory: "개발(CE)", contractType: "파견직", photoBgColor: "#E2ECE9" },
+  { name: "강현우", jobCategory: "개발", contractType: "파견직", photoBgColor: "#E2ECE9" },
   { name: "조유나", jobCategory: "디자인", contractType: "아르바이트", photoBgColor: "#DFE7FD" },
 ] as const;
 

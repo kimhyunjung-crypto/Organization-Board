@@ -2,7 +2,7 @@ import type { CropRect } from "../imaging/types";
 
 export type { FontkitFont } from "./fontLoader";
 
-export type JobCategory = "디자인" | "서비스" | "개발(CE)" | "백오피스(BP)" | "QA";
+export type JobCategory = "디자인" | "서비스" | "개발" | "백오피스" | "QA";
 export type ContractType = "정규직" | "계약직" | "아르바이트" | "파견직" | "인턴";
 
 export type HexColor = `#${string}`;

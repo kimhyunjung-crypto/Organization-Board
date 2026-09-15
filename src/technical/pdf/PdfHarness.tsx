@@ -28,7 +28,7 @@ export function PdfHarness() {
 
   // Interactive controls
   const [customName, setCustomName] = useState<string>("김철수 수석");
-  const [selectedJob, setSelectedJob] = useState<JobCategory>("개발(CE)");
+  const [selectedJob, setSelectedJob] = useState<JobCategory>("개발");
   const [selectedContract, setSelectedContract] = useState<ContractType>("정규직");
   const [showGuides, setShowGuides] = useState<boolean>(true);
   const [selectedSyntheticIndex, setSelectedSyntheticIndex] = useState<number>(0);

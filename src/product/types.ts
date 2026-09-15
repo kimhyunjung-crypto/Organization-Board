@@ -6,8 +6,8 @@ export type { ContractType, JobCategory };
 export const JOB_CATEGORIES: readonly JobCategory[] = [
   "디자인",
   "서비스",
-  "개발(CE)",
-  "백오피스(BP)",
+  "개발",
+  "백오피스",
   "QA",
 ] as const;
 

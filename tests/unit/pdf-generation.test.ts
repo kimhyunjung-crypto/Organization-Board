@@ -39,7 +39,7 @@ describe("TRD §10 & S00.04 PDF Generation Engine", () => {
     Array.from({ length: count }, (_, i) => ({
       employeeId: `emp-${i + 1}`,
       name: i === 0 ? "홍길동" : i === 15 ? "김철수 수석" : `직원${i + 1}`,
-      jobCategory: "개발(CE)",
+      jobCategory: "개발",
       contractType: i % 2 === 0 ? "정규직" : "계약직",
       photoCrop: { x: 0, y: 0, width: 224, height: 263 },
     }));

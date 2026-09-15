@@ -114,8 +114,8 @@ export const FONT_CONSTANTS = {
 export const JOB_COLORS: Record<JobCategory, HexColor> = {
   디자인: "#FFAE01",
   서비스: "#FF01A2",
-  "개발(CE)": "#0196FF",
-  "백오피스(BP)": "#47B50B",
+  개발: "#0196FF",
+  백오피스: "#47B50B",
   QA: "#9900FF",
 };
 

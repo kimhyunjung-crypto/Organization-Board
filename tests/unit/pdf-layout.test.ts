@@ -54,7 +54,7 @@ describe("TRD §9.1, §9.2 & §10.1 Card & A4 Grid Layout", () => {
   });
 
   describe("Chip Color Resolution (TRD §9.2)", () => {
-    const jobs: JobCategory[] = ["디자인", "서비스", "개발(CE)", "백오피스(BP)", "QA"];
+    const jobs: JobCategory[] = ["디자인", "서비스", "개발", "백오피스", "QA"];
     const nonRegularContracts: Exclude<ContractType, "정규직">[] = [
       "계약직",
       "아르바이트",
@@ -85,14 +85,14 @@ describe("TRD §9.1, §9.2 & §10.1 Card & A4 Grid Layout", () => {
     it("verifies exact HEX values from TRD §9.2 table", () => {
       expect(resolveChipColor("디자인", "정규직").hex).toBe("#FFAE01");
       expect(resolveChipColor("서비스", "정규직").hex).toBe("#FF01A2");
-      expect(resolveChipColor("개발(CE)", "정규직").hex).toBe("#0196FF");
-      expect(resolveChipColor("백오피스(BP)", "정규직").hex).toBe("#47B50B");
+      expect(resolveChipColor("개발", "정규직").hex).toBe("#0196FF");
+      expect(resolveChipColor("백오피스", "정규직").hex).toBe("#47B50B");
       expect(resolveChipColor("QA", "정규직").hex).toBe("#9900FF");
 
-      expect(resolveChipColor("개발(CE)", "계약직").hex).toBe("#E6B8AF");
+      expect(resolveChipColor("개발", "계약직").hex).toBe("#E6B8AF");
       expect(resolveChipColor("디자인", "아르바이트").hex).toBe("#737373");
       expect(resolveChipColor("서비스", "파견직").hex).toBe("#A4C2F4");
-      expect(resolveChipColor("백오피스(BP)", "인턴").hex).toBe("#00FFFF");
+      expect(resolveChipColor("백오피스", "인턴").hex).toBe("#00FFFF");
     });
   });
 
@@ -209,7 +209,7 @@ describe("TRD §9.1, §9.2 & §10.1 Card & A4 Grid Layout", () => {
         {
           employeeId: "bad-1",
           name: "田中 太郎", // Japanese kanji missing glyph
-          jobCategory: "개발(CE)",
+          jobCategory: "개발",
           contractType: "정규직",
           photoCrop: { x: 0, y: 0, width: 224, height: 263 },
         },

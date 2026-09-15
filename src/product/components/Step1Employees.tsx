@@ -28,14 +28,14 @@ export function Step1Employees() {
 
   // Direct addition form state
   const [nameInput, setNameInput] = useState("");
-  const [jobInput, setJobInput] = useState<JobCategory>("개발(CE)");
+  const [jobInput, setJobInput] = useState<JobCategory>("개발");
   const [contractInput, setContractInput] = useState<ContractType>("정규직");
   const [inputError, setInputError] = useState<string | null>(null);
 
   // Edit employee state
   const [editingEmployeeId, setEditingEmployeeId] = useState<string | null>(null);
   const [editName, setEditName] = useState("");
-  const [editJob, setEditJob] = useState<JobCategory>("개발(CE)");
+  const [editJob, setEditJob] = useState<JobCategory>("개발");
   const [editContract, setEditContract] = useState<ContractType>("정규직");
 
   // XLSX Upload state
@@ -120,7 +120,7 @@ export function Step1Employees() {
           ([sourceRow, issues]) => ({
             sourceRow,
             name: "",
-            jobCategory: "개발(CE)" as JobCategory,
+            jobCategory: "개발" as JobCategory,
             contractType: "정규직" as ContractType,
             issues,
           }),
