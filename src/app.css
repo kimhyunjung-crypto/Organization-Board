@@ -212,3 +212,16 @@ h1 {
     flex-direction: column;
   }
 }
+.spike-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ccd7cf;
+  background: #f7faf7;
+}
+
+.spike-navigation a {
+  color: #24583d;
+  font-weight: 700;
+}
